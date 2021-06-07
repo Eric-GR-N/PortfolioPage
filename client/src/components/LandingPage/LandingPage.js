@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from 'react'
-import { Burger, Divider, Item, LandingContainer, Logo, MenuContainer, MainHeader, Menu, NavBar, NavLink, Span, TitleParagraph, UpperContainer, BottomContainer, MainContainer, ImageContainer, MainContentContainer, InnerContainer, ArrowLeft, ArrowRight, ProjectWrapper, BurgerCross, MenuParagraph } from './LandingPageElements';
-import Portfolio from '../../resources/logo.PNG';
+import { Burger, Divider, Item, LandingContainer, Menu, NavBar, NavLink, Span, TitleParagraph, UpperContainer, BottomContainer, MainContainer, ImageContainer, MainContentContainer, InnerContainer, ArrowLeft, ArrowRight, ProjectWrapper, BurgerCross, MenuParagraph, ContactBox, PhoneIcon, MailIcon } from './LandingPageElements';
 import { Note } from '../../globalComponents';
+import Portrait from '../../resources/me.jpg';
+import Contact from '../../resources/contact.jpg';
+import HomePage from '../../resources/HomePage.png';
+import PilsnerProtokollet from '../../resources/pilsner.png';
 
 const projects = [{
-    img: 'Home Page Pic',
+    img: HomePage,
+    width: '23em',
+    height: '16em',
     titleText: 'Home Page',
-    text: 'A web app for home automation and integration of the Internet Of Things for a simpler everyday life',
+    text: 'A web app for home automation and integration of the Internet Of Things for a simpler everyday life. The App is developed with React.js on the frontend and Node.js on the backend',
 },
 {
-    img: 'Pilsner Protokollet Pic',
+    img: PilsnerProtokollet,
+    width: '15em',
+    height: '24em',
     titleText: 'PilsnerProtokollet',
-    text: 'PilsnerProtokollet text',
-},
-{
-    img: 'Jowy Pic',
-    titleText: 'Jowy',
-    text: 'Jowy Text',
+    text: 'This one is mostly just for laughs. My friends who has a passion for beer testing needed a fullstack mobile friendly page that is able to communicate with a MySQL database for rating and fetching aggregated data',
 }
 ];
 
@@ -39,7 +41,7 @@ const LandingPage = () => {
     }
 
     const slideRight = ()=>{
-        if(project < 2){
+        if(project < 1){
             setProject(project + 1);
         }
     }
@@ -60,7 +62,7 @@ const LandingPage = () => {
                 <MainContentContainer>
                 <ArrowLeft onClick={slideLeft}/>
                 <InnerContainer>
-                    <Note>{obj.img}</Note>
+                    <Note img={obj.img} width={obj.width} height={obj.height}/>
                 </InnerContainer>
                 <InnerContainer>
                     <TitleParagraph width="80%">{obj.titleText}</TitleParagraph>
@@ -73,13 +75,30 @@ const LandingPage = () => {
             return (
                 <MainContentContainer>
                 <InnerContainer>
-                    <ImageContainer/>
+                    <ImageContainer img={Portrait}/>
                 </InnerContainer>
                 <Divider height='60%'/>
                 <InnerContainer>
                     <TitleParagraph width="80%">Eric Nordgren</TitleParagraph>
                     <TitleParagraph margin="8%" width="80%">A newly graduated student with a strong passion for Frontend Development. At the moment i'm combining vacation with deep diving into React.js</TitleParagraph>
                     <TitleParagraph>- A perfect summer</TitleParagraph>
+                </InnerContainer>
+            </MainContentContainer>
+            )
+        }else if(menuChoice === 'Contact'){
+            return (
+                <MainContentContainer>
+                <InnerContainer>
+                    <ImageContainer img={Contact}/>
+                </InnerContainer>
+                <Divider height='60%'/>
+                <InnerContainer>
+                    <ContactBox>
+                        <PhoneIcon /><TitleParagraph>076 325 1816</TitleParagraph>
+                    </ContactBox>
+                    <ContactBox>
+                        <MailIcon /><TitleParagraph>eric.r.nordgren@gmail.com</TitleParagraph>
+                    </ContactBox>
                 </InnerContainer>
             </MainContentContainer>
             )

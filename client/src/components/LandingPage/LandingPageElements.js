@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import {PageContainer} from '../../globalComponents';
 import {Header, Paragraph} from '../../globalComponents';
 import {Link} from 'react-scroll';
-import Portfolio from '../../resources/logo.PNG';
 import { GrMenu } from 'react-icons/gr';
 import { GrClose } from 'react-icons/gr';
-import Portrait from '../../resources/me.jpg';
+import { FiPhoneForwarded } from 'react-icons/fi';
+import { GoMail } from 'react-icons/go';
 import {MdKeyboardArrowRight, MdKeyboardArrowLeft} from 'react-icons/md'
+import Background from '../../resources/background1.jpg';
 
 
 
@@ -72,6 +73,10 @@ height: 0.8em;
 border-radius: 100%;
 `
 export const MainContainer = styled.div`
+background-image: url(${Background});
+background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
 display: flex;
 justify-content: start;
 align-items: center;
@@ -86,10 +91,8 @@ export const TitleParagraph = styled(Paragraph)`
 margin: ${props => props.margin};
 width: ${props => props.width};
 color: #1B2F33;
-letter-spacing: 3px;
 font-size: 1rem;
 text-align: center;
-${'' /* border: solid green 2px; */}
 `
 export const MenuParagraph = styled.p`
 top: 0;
@@ -136,7 +139,7 @@ margin: 8%;
 border-radius: 100%;
 width: 15em;
 height: 15em;
-background-image: url(${Portrait});
+background-image: url(${props => props.img});
 background-size: cover;
 background-position: center;
 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.356);
@@ -148,16 +151,17 @@ flex-shrink: 0;
 position: relative;
 align-items: center;
 justify-content: center;
-${'' /* border: solid yellow 2px; */}
+border-radius: 10px;
+Background-color: rgba(255,255,255,0.9);
+
 width: 100%;
-height: 80%;
+height: 100%;
 `
 
 export const InnerContainer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-${'' /* border: solid yellow 2px; */}
 height: 100%;
 width: 40%;
 flex-wrap: wrap;
@@ -179,6 +183,24 @@ height: 4em;
 position: fixed;
 left: 15%;
 cursor: pointer;
+`
+
+export const ContactBox = styled.div`
+display: flex;
+align-items: center;
+width: 80%;
+margin: 1em;
+`
+
+export const PhoneIcon = styled(FiPhoneForwarded)`
+width: 1.3em;
+height: 1.3em;
+margin-right: 1em;
+`
+export const MailIcon = styled(GoMail)`
+width: 1.5em;
+height: 1.5em;
+margin-right: 0.8em;
 `
 
 
