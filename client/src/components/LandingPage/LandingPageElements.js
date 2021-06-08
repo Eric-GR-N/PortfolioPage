@@ -4,6 +4,7 @@ import {Header, Paragraph} from '../../globalComponents';
 import {Link} from 'react-scroll';
 import { GrMenu } from 'react-icons/gr';
 import { GrClose } from 'react-icons/gr';
+import {AiFillHome} from 'react-icons/ai';
 import { FiPhoneForwarded } from 'react-icons/fi';
 import { GoMail } from 'react-icons/go';
 import {MdKeyboardArrowRight, MdKeyboardArrowLeft} from 'react-icons/md'
@@ -25,8 +26,29 @@ height: 70vh;
 `
 
 export const BottomContainer = styled(PageContainer)`
+display: flex;
+justify-content: center;
 height: 30vh;
 background-color: #1B2F33;
+position: relative;
+`
+
+export const MainHeader = styled.h1`
+font-family: 'Montserrat', sans-serif;
+position: absolute;
+top: 0%;
+left: 0%;
+margin: 1em;
+color: #1B2F33;
+font-size: 2rem;
+`
+export const MainText = styled.h1`
+font-family: 'Montserrat', sans-serif;
+position: absolute;
+left: 5%;
+top: 60%;
+color: #1B2F33;
+font-size: 1rem;
 `
 
 export const NavBar = styled.nav`
@@ -55,7 +77,7 @@ padding: 0 2em;
 
 export const NavLink= styled(Link)`
 color: #1B2F33;
-font-size: 1rem;
+font-size: 1.3rem;
 border-bottom: solid black 1px;
 transition: 0.4s ease-in-out;
 cursor: pointer;
@@ -85,13 +107,14 @@ height: 60vh;
 width: 70%;
 position: relative;
 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.356);
+overflow: hidden;
 `
 
 export const TitleParagraph = styled(Paragraph)`
 margin: ${props => props.margin};
 width: ${props => props.width};
 color: #1B2F33;
-font-size: 1rem;
+font-size: 1.3rem;
 text-align: center;
 `
 export const MenuParagraph = styled.p`
@@ -111,7 +134,7 @@ color: #1B2F33;
 position: absolute;
 top: 0;
 left: 0;
-margin: 1em;
+margin: 1em 0 0 1.2em;
 z-index: 11;
 cursor: pointer;
 `
@@ -123,14 +146,14 @@ color: #1B2F33;
 position: absolute;
 top: 0;
 left: 0;
-margin: 1em;
+margin: 1em 0 0 1.2em;
 z-index: 11;
 cursor: pointer;
 `
 
 export const Divider = styled.div`
 height: ${props => props.height};
-border: solid 1px #1B2F33;
+border: solid 1px rgba(0,0,0, 0.4);
 position: absolute;
 `
 
@@ -151,8 +174,7 @@ flex-shrink: 0;
 position: relative;
 align-items: center;
 justify-content: center;
-border-radius: 10px;
-Background-color: rgba(255,255,255,0.9);
+Background-color: rgba(255,255,255,0.95);
 
 width: 100%;
 height: 100%;
@@ -201,6 +223,54 @@ export const MailIcon = styled(GoMail)`
 width: 1.5em;
 height: 1.5em;
 margin-right: 0.8em;
+`
+
+export const Footer = styled.footer`
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 90%;
+height: 100%;
+`
+
+export const FooterBox = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: start;
+align-items: center;
+width: 15%;
+height: 90%;
+position: relative;
+${'' /* border: solid white 2px; */}
+`
+
+export const FooterText = styled.p`
+color: white;
+line-height: 1.5em;
+font-size: 1.1rem;
+text-align: center;
+`
+
+export const FooterTitle = styled.p`
+padding: 0 8% 1% 8%;
+color: white;
+letter-spacing: 2px;
+font-size: 1.2rem;
+text-align: center;
+margin: 10% 0 10% 0;
+border-bottom: solid white 1px;
+`
+
+export const Home = styled(AiFillHome)`
+width: 1.6em;
+height: 1.6em;
+color: #1B2F33;
+position: absolute;
+top: 0;
+right: 0;
+margin: 1em 1.2em 0 0;
+z-index: 11;
+cursor: pointer;
 `
 
 

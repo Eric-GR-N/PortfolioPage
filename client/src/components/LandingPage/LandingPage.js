@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Burger, Divider, Item, LandingContainer, Menu, NavBar, NavLink, Span, TitleParagraph, UpperContainer, BottomContainer, MainContainer, ImageContainer, MainContentContainer, InnerContainer, ArrowLeft, ArrowRight, ProjectWrapper, BurgerCross, MenuParagraph, ContactBox, PhoneIcon, MailIcon } from './LandingPageElements';
+import { Burger, Divider, Item, LandingContainer, Menu, NavBar, NavLink, Span,
+TitleParagraph, UpperContainer, BottomContainer, MainContainer, ImageContainer,
+MainContentContainer, InnerContainer, ArrowLeft, ArrowRight, ProjectWrapper,
+BurgerCross, MenuParagraph, ContactBox, PhoneIcon, MailIcon, Footer, FooterBox,
+FooterText, FooterTitle, Home, MainHeader, MainText } from './LandingPageElements';
 import { Note } from '../../globalComponents';
 import Portrait from '../../resources/me.jpg';
 import Contact from '../../resources/contact.jpg';
@@ -27,10 +31,6 @@ const LandingPage = () => {
     const [project, setProject] = useState(0);
     const [menuOpen, setMenuOpen] = useState(false);
 
-
-    useEffect(()=>{
-        renderContent();
-    },[project, menuChoice])
 
     const isOpen = () =>{
         setMenuOpen(!menuOpen);
@@ -94,7 +94,7 @@ const LandingPage = () => {
                 <Divider height='60%'/>
                 <InnerContainer>
                     <ContactBox>
-                        <PhoneIcon /><TitleParagraph>076 325 1816</TitleParagraph>
+                        <PhoneIcon /><TitleParagraph>076 325 18 16</TitleParagraph>
                     </ContactBox>
                     <ContactBox>
                         <MailIcon /><TitleParagraph>eric.r.nordgren@gmail.com</TitleParagraph>
@@ -109,6 +109,7 @@ const LandingPage = () => {
     return (
         <LandingContainer>
         <UpperContainer>
+        <Home onClick={e => setType(e)}/>
         {menuOpen ? <BurgerCross onClick={isOpen}/> : <Burger onClick={isOpen}/>}
         <NavBar menuOpen={menuOpen}>
                 <Menu>
@@ -126,11 +127,34 @@ const LandingPage = () => {
 
 
                 <MainContainer>
+                <MainHeader>Eric Nordgren</MainHeader>
+                <MainText>Software Developer</MainText>
                 {renderContent()}
                 </MainContainer>
                 </UpperContainer>
                 <BottomContainer>
-
+                <Footer>
+                    <FooterBox>
+                        <FooterTitle>Top Skills</FooterTitle>
+                        <FooterText>
+                        React
+                        <br/>
+                        SQL
+                        <br/>
+                        Styled Components
+                        <br/>
+                        HTML & CSS
+                        </FooterText>
+                    </FooterBox>
+                    <FooterBox>
+                        <FooterTitle>Up To</FooterTitle>
+                        <FooterText>Currently planning and brainstorming a website design for for a friend and up and coming DJ - Jowy</FooterText>
+                    </FooterBox>
+                    <FooterBox>
+                        <FooterTitle>Goal</FooterTitle>
+                        <FooterText>To become a Fullstack Developer with deep understanding of the whole process - Starting from the front</FooterText>
+                    </FooterBox>
+                </Footer>
                 </BottomContainer>
         </LandingContainer>
     )
