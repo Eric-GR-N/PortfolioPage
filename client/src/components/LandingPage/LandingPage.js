@@ -3,7 +3,7 @@ import { Burger, Divider, Item, LandingContainer, Menu, NavBar, NavLink, Span,
 TitleParagraph, UpperContainer, BottomContainer, MainContainer, ImageContainer,
 MainContentContainer, InnerContainer, ArrowLeft, ArrowRight, ProjectWrapper,
 BurgerCross, MenuParagraph, ContactBox, PhoneIcon, MailIcon, Footer, FooterBox,
-FooterText, FooterTitle, Home, MainHeader, MainText } from './LandingPageElements';
+FooterText, FooterTitle, Home, MainHeader, MainText, MainWrapper } from './LandingPageElements';
 import { Note } from '../../globalComponents';
 import Portrait from '../../resources/me.jpg';
 import Contact from '../../resources/contact.jpg';
@@ -27,17 +27,16 @@ const projects = [{
 ];
 
 const LandingPage = () => {
-    const [menuChoice, setMenuChoice] = useState();
+    const [menuChoice, setMenuChoice] = useState('Home');
     const [project, setProject] = useState(0);
     const [menuOpen, setMenuOpen] = useState(false);
-
 
     const isOpen = () =>{
         setMenuOpen(!menuOpen);
     }
 
     const setType = (e)=>{
-        setMenuChoice(e.target.innerText);
+        setMenuChoice(e.target.innerText ? e.target.innerText : 'Home');
     }
 
     const slideRight = ()=>{
@@ -127,8 +126,11 @@ const LandingPage = () => {
 
 
                 <MainContainer>
+                {menuChoice === 'Home' && <MainWrapper>
                 <MainHeader>Eric Nordgren</MainHeader>
                 <MainText>Software Developer</MainText>
+                </MainWrapper>}
+                
                 {renderContent()}
                 </MainContainer>
                 </UpperContainer>

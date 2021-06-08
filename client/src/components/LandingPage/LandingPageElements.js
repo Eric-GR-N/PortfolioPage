@@ -33,22 +33,30 @@ background-color: #1B2F33;
 position: relative;
 `
 
-export const MainHeader = styled.h1`
-font-family: 'Montserrat', sans-serif;
+export const MainWrapper = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+${'' /* border: solid 3px black; */}
 position: absolute;
-top: 0%;
-left: 0%;
-margin: 1em;
+width: 40%;
+`
+
+export const MainHeader = styled.h1`
+margin-bottom: 0.5em;
+font-family: 'Montserrat', sans-serif;
 color: #1B2F33;
-font-size: 2rem;
+font-size: 3rem;
+text-align: center;
+opacity: ${props => props.opacity};
+transition: opacity 1s ease-in-out;
+width: ${props => props.width};
 `
 export const MainText = styled.h1`
 font-family: 'Montserrat', sans-serif;
-position: absolute;
-left: 5%;
-top: 60%;
 color: #1B2F33;
-font-size: 1rem;
+font-size: 1.5rem;
 `
 
 export const NavBar = styled.nav`
@@ -97,10 +105,10 @@ border-radius: 100%;
 export const MainContainer = styled.div`
 background-image: url(${Background});
 background-size: cover;
- background-repeat: no-repeat;
- background-position: center;
+background-repeat: no-repeat;
+background-position: center;
 display: flex;
-justify-content: start;
+justify-content: center;
 align-items: center;
 border-radius: 25px;
 height: 60vh;
