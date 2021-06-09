@@ -51,7 +51,7 @@ position: absolute;
 width: 40%;
 
 @media only screen and (max-width: 600px) {
-    margin-bottom: 40%;
+    padding-bottom: 40%;
     width: 100%;
     justify-content: center;
 }
