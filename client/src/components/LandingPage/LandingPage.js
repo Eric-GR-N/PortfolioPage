@@ -3,7 +3,7 @@ import { Burger, Divider, Item, LandingContainer, Menu, NavBar, NavLink,
 TitleParagraph, UpperContainer, BottomContainer, MainContainer, ImageContainer,
 MainContentContainer, InnerContainer, ArrowLeft, ArrowRight,
 BurgerCross, ContactBox, PhoneIcon, MailIcon, Footer, FooterBox,
-FooterText, FooterTitle, Home, MainHeader, MainText, MainWrapper, MenuText, NavigationWrapper, InnerTextWrapper } from './LandingPageElements';
+FooterText, FooterTitle, Home, MainHeader, MainText, MainWrapper, MenuText, NavigationWrapper, InnerTextWrapper, MobileNavBar } from './LandingPageElements';
 import { Note } from '../../globalComponents';
 import Portrait from '../../resources/me.jpg';
 import Contact from '../../resources/contact.jpg';
@@ -37,6 +37,16 @@ const LandingPage = () => {
 
     const setType = (e)=>{
         setMenuChoice(e.target.innerText ? e.target.innerText : 'Home');
+    }
+
+    const setTypeMobile = (e)=>{
+        setMenuChoice(e.target.innerText ? e.target.innerText : 'Home');
+        setMenuOpen(!menuOpen);
+    }
+
+    const Refresh = ()=>{
+        setMenuChoice('Home');
+        setMenuOpen(false);
     }
 
     const slideRight = ()=>{
@@ -117,7 +127,7 @@ const LandingPage = () => {
         <NavigationWrapper>
         {menuOpen ? <BurgerCross onClick={isOpen}/> : <Burger onClick={isOpen}/>}
         <MenuText>Menu</MenuText>
-        <Home onClick={e => setType(e)}/>
+        <Home onClick={Refresh}/>
         </NavigationWrapper>
         <NavBar menuOpen={menuOpen}>
                 <Menu>
@@ -132,6 +142,20 @@ const LandingPage = () => {
                     </Item>
                 </Menu>
         </NavBar>
+
+        <MobileNavBar menuOpen={menuOpen}>
+                <Menu>
+                    <Item>
+                    <NavLink onClick={e => setTypeMobile(e)}>About Me</NavLink>
+                    </Item>
+                    <Item>
+                    <NavLink onClick={e => setTypeMobile(e)}>Projects</NavLink>
+                    </Item>
+                    <Item>
+                    <NavLink onClick={e => setTypeMobile(e)}>Contact</NavLink>
+                    </Item>
+                </Menu>
+        </MobileNavBar>
 
 
                 <MainContainer>

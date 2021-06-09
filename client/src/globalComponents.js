@@ -26,8 +26,9 @@ export const Note = styled.div`
  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.356);
 
  @media only screen and (max-width: 600px) {
-    height: 80%;
-    width: 95%;
+    height: 70%;
+    width: 90%;
+    margin-top: 10%;
 }
 `
 

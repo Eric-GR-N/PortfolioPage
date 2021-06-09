@@ -72,7 +72,7 @@ font-size: 1.5rem;
 `
 
 export const NavBar = styled.nav`
-transition: 0.7s ease-in-out;
+transition: 0.6s ease-in-out;
 display: flex;
 position: absolute;
 justify-content: center;
@@ -80,7 +80,31 @@ align-items: center;
 left: ${props => props.menuOpen ? 0 : '-15%'};
 width: 15%;
 height: 100%;
-z-index: 10;
+z-index: 100;
+
+@media only screen and (max-width: 600px) {
+    transition: 0.5s ease-in-out;
+    height: 100%;
+    background-color: rgba(255,255,255,0.99);
+    width: 100%;
+    left: ${props => props.menuOpen ? 0 : '-100%'};
+}
+`
+
+export const MobileNavBar = styled.nav`
+display: none;
+@media only screen and (max-width: 600px) {
+    z-index: 100;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    height: 100%;
+    background-color: rgba(255,255,255,0.99);
+    width: 100%;
+    left: ${props => props.menuOpen ? 0 : '-100%'};
+}
 `
 
 export const Menu = styled.ul`
@@ -89,6 +113,10 @@ flex-direction: column;
 justify-content: space-around;
 align-items: center;
 height: 50%;
+
+@media only screen and (max-width: 600px) {
+    border: solid white 3px;
+}
 `
 
 export const Item = styled.li`
@@ -101,6 +129,11 @@ font-size: 1.3rem;
 border-bottom: solid black 1px;
 transition: 0.4s ease-in-out;
 cursor: pointer;
+
+@media only screen and (max-width: 600px) {
+    border: none;
+    font-size: 2rem;
+}
 
 &:hover{
     transition: 0.4s ease-in-out;
@@ -131,6 +164,7 @@ overflow: hidden;
 @media only screen and (max-width: 600px) {
     height: 100vh;
     width: 100%;
+    border-radius: 0;
 }
 `
 
@@ -141,7 +175,6 @@ color: #1B2F33;
 font-size: 1.3rem;
 text-align: center;
 @media only screen and (max-width: 600px) {
-    border: solid blue 1px;
     width: 90%;
 }
 `
@@ -156,12 +189,19 @@ color: pink;
 `
 
 export const Burger = styled(GrMenu)`
-width: 1.6em;
-height: 1.6em;
+min-height: 1.6em;
+min-width: 1.6em;
 color: #1B2F33;
 z-index: 11;
 cursor: pointer;
 margin: 1em;
+
+@media only screen and (max-width: 600px) {
+    width: 1.8em;
+    height: 1.8em;
+    margin: 0.5em;
+}
+
 &:active{
     transition: 0.4s;
     transform: scale(0.5);
@@ -169,12 +209,19 @@ margin: 1em;
 `
 
 export const BurgerCross = styled(GrClose)`
-width: 1.6em;
-height: 1.6em;
+min-height: 1.6em;
+min-width: 1.6em;
 color: #1B2F33;
-z-index: 11;
+z-index: 110;
 cursor: pointer;
 margin: 1em;
+
+@media only screen and (max-width: 600px) {
+    width: 1.8em;
+    height: 1.8em;
+    margin: 0.5em;
+}
+
 &:active{
     transition: 0.4s;
     transform: scale(0.5);
@@ -185,6 +232,12 @@ export const Divider = styled.div`
 height: ${props => props.height};
 border: solid 1px rgba(0,0,0, 0.4);
 position: absolute;
+
+@media only screen and (max-width: 600px) {
+    height: 0;
+    width: 75%;
+    border: solid 0.4px rgba(0,0,0, 0.4);
+}
 `
 
 export const ImageContainer = styled.div`
@@ -196,11 +249,14 @@ background-image: url(${props => props.img});
 background-size: cover;
 background-position: center;
 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.356);
+
+@media only screen and (max-width: 600px) {
+    margin-top: 12%;
+}
 `
 
 export const MainContentContainer = styled.div`
 display: flex;
-flex-shrink: 0;
 position: relative;
 align-items: center;
 justify-content: center;
@@ -225,7 +281,6 @@ align-content: center;
     position: relative;
     height: 50%;
     width: 100%;
-    border: solid red 2px;
 }
 `
 
@@ -240,6 +295,8 @@ z-index: 100;
 @media only screen and (max-width: 600px) {
     position: absolute;
     right: 5%;
+    top: 50%;
+    z-index: 10;
 }
 `
 export const ArrowLeft = styled(MdKeyboardArrowLeft)`
@@ -252,8 +309,10 @@ cursor: pointer;
 z-index: 100;
 
 @media only screen and (max-width: 600px) {
+    top: 50%;
     position: absolute;
     left: 5%;
+    z-index: 10;
 }
 `
 
@@ -264,8 +323,6 @@ width: 80%;
 margin: 1em;
 
 @media only screen and (max-width: 600px) {
-    margin: 0;
-    padding-bottom: 5%;
 }
 `
 
@@ -323,12 +380,17 @@ border-bottom: solid rgba(255,255,255, 0.8) 1px;
 `
 
 export const Home = styled(AiFillHome)`
-width: 1.6em;
-height: 1.6em;
+z-index: 100;
+min-width: 1.6em;
+min-height: 1.6em;
 color: #1B2F33;
 z-index: 11;
 cursor: pointer;
 margin-left: 90%;
+
+@media only screen and (max-width: 600px) {
+    margin: 80%;
+}
 
 &:active{
     transition: 0.4s;
@@ -347,15 +409,19 @@ letter-spacing: 2px;
 `
 
 export const NavigationWrapper = styled.div`
+z-index: 101;
 display: flex;
 align-items: center;
 position: absolute;
 width: 100%;
+height: 7vh;
 top: 0;
+
+@media only screen and (max-width: 600px) {
+}
 `
 
 export const InnerTextWrapper = styled.div`
-border: yellow solid 2px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -365,6 +431,7 @@ width: 95%;
 
 @media only screen and (max-width: 600px) {
     justify-content: start;
+    margin-bottom: 5%;
 }
 `
 
