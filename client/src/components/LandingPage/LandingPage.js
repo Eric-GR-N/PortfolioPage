@@ -9,9 +9,11 @@ import Portrait from '../../resources/me.jpg';
 import Contact from '../../resources/contact.jpg';
 import HomePage from '../../resources/HomePage.png';
 import PilsnerProtokollet from '../../resources/pilsner.png';
+import PilsnerMob from '../../resources/pilsnermob.png';
 
 const projects = [{
     img: HomePage,
+    mobileImg: HomePage,
     width: '23em',
     height: '16em',
     titleText: 'Home Page',
@@ -19,6 +21,7 @@ const projects = [{
 },
 {
     img: PilsnerProtokollet,
+    mobileImg: PilsnerMob,
     width: '15em',
     height: '24em',
     titleText: 'PilsnerProtokollet',
@@ -71,7 +74,7 @@ const LandingPage = () => {
                 <MainContentContainer>
                 <ArrowLeft onClick={slideLeft}/>
                 <InnerContainer>
-                    <Note img={obj.img} width={obj.width} height={obj.height}/>
+                    <Note img={obj.img} mobileImg={obj.mobileImg} width={obj.width} height={obj.height}/>
                 </InnerContainer>
                 <InnerContainer>
                     <InnerTextWrapper>
