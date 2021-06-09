@@ -92,11 +92,7 @@ height: 100%;
 z-index: 100;
 
 @media only screen and (max-width: 600px) {
-    transition: 0.5s ease-in-out;
-    height: 100%;
-    background-color: rgba(255,255,255,0.99);
-    width: 100%;
-    left: ${props => props.menuOpen ? 0 : '-100%'};
+    display: none;
 }
 `
 
@@ -110,7 +106,7 @@ display: none;
     align-items: center;
     transition: 0.5s ease-in-out;
     height: 100%;
-    background-color: rgba(255,255,255,0.99);
+    background-color: rgba(255,255,255,0.98);
     width: 100%;
     left: ${props => props.menuOpen ? 0 : '-100%'};
 }
@@ -124,7 +120,7 @@ align-items: center;
 height: 50%;
 
 @media only screen and (max-width: 600px) {
-    border: solid white 3px;
+
 }
 `
 
