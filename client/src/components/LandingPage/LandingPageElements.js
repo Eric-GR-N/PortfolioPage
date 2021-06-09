@@ -9,6 +9,7 @@ import { FiPhoneForwarded } from 'react-icons/fi';
 import { GoMail } from 'react-icons/go';
 import {MdKeyboardArrowRight, MdKeyboardArrowLeft} from 'react-icons/md'
 import Background from '../../resources/background1.jpg';
+import BackgroundMob from '../../resources/backgroundmob1.jpg';
 
 
 
@@ -50,6 +51,7 @@ position: absolute;
 width: 40%;
 
 @media only screen and (max-width: 600px) {
+    margin-bottom: 40%;
     width: 100%;
     justify-content: center;
 }
@@ -64,11 +66,18 @@ text-align: center;
 opacity: ${props => props.opacity};
 transition: opacity 1s ease-in-out;
 width: ${props => props.width};
+
+@media only screen and (max-width: 600px) {
+    font-size: 2rem;
+}
 `
 export const MainText = styled.h1`
 font-family: 'Montserrat', sans-serif;
 color: #1B2F33;
 font-size: 1.5rem;
+@media only screen and (max-width: 600px) {
+    font-size: 1rem;
+}
 `
 
 export const NavBar = styled.nav`
@@ -164,6 +173,7 @@ overflow: hidden;
 @media only screen and (max-width: 600px) {
     height: 100vh;
     width: 100%;
+    background-image: url(${BackgroundMob});
     border-radius: 0;
 }
 `
