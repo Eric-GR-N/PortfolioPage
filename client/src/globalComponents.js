@@ -25,8 +25,10 @@ export const Note = styled.div`
  border-radius: 15px;
  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.356);
 
- &:hover{
- }
+ @media only screen and (max-width: 600px) {
+    height: 80%;
+    width: 95%;
+}
 `
 
 export const BigNote = styled.div`

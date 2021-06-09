@@ -3,7 +3,7 @@ import { Burger, Divider, Item, LandingContainer, Menu, NavBar, NavLink,
 TitleParagraph, UpperContainer, BottomContainer, MainContainer, ImageContainer,
 MainContentContainer, InnerContainer, ArrowLeft, ArrowRight,
 BurgerCross, ContactBox, PhoneIcon, MailIcon, Footer, FooterBox,
-FooterText, FooterTitle, Home, MainHeader, MainText, MainWrapper, MenuText, NavigationWrapper } from './LandingPageElements';
+FooterText, FooterTitle, Home, MainHeader, MainText, MainWrapper, MenuText, NavigationWrapper, InnerTextWrapper } from './LandingPageElements';
 import { Note } from '../../globalComponents';
 import Portrait from '../../resources/me.jpg';
 import Contact from '../../resources/contact.jpg';
@@ -64,8 +64,10 @@ const LandingPage = () => {
                     <Note img={obj.img} width={obj.width} height={obj.height}/>
                 </InnerContainer>
                 <InnerContainer>
-                    <TitleParagraph width="80%">{obj.titleText}</TitleParagraph>
-                    <TitleParagraph margin="8%" width="80%">{obj.text}</TitleParagraph>
+                    <InnerTextWrapper>
+                        <TitleParagraph width="80%">{obj.titleText}</TitleParagraph>
+                        <TitleParagraph margin="8%" width="80%">{obj.text}</TitleParagraph>
+                    </InnerTextWrapper>
                 </InnerContainer>
                 <ArrowRight onClick={slideRight}/>
             </MainContentContainer>
@@ -78,9 +80,11 @@ const LandingPage = () => {
                     </InnerContainer>
                     <Divider height='60%'/>
                     <InnerContainer>
-                        <TitleParagraph width="80%">Eric Nordgren</TitleParagraph>
-                        <TitleParagraph margin="8%" width="80%">A newly graduated student with a strong passion for Frontend Development. At the moment i'm combining vacation with deep diving into React.js</TitleParagraph>
-                        <TitleParagraph>- A perfect summer</TitleParagraph>
+                        <InnerTextWrapper>
+                            <TitleParagraph width="80%">Eric Nordgren</TitleParagraph>
+                            <TitleParagraph margin="8%" width="80%">A newly graduated student with a strong passion for Frontend Development. At the moment i'm combining vacation with deep diving into React.js</TitleParagraph>
+                            <TitleParagraph>- A perfect summer</TitleParagraph>
+                        </InnerTextWrapper>
                     </InnerContainer>
                 </MainContentContainer>
                 )
@@ -92,12 +96,14 @@ const LandingPage = () => {
                 </InnerContainer>
                 <Divider height='60%'/>
                 <InnerContainer>
+                <InnerTextWrapper>
                     <ContactBox>
                         <PhoneIcon /><TitleParagraph>076 325 18 16</TitleParagraph>
                     </ContactBox>
                     <ContactBox>
                         <MailIcon /><TitleParagraph>eric.r.nordgren@gmail.com</TitleParagraph>
                     </ContactBox>
+                    </InnerTextWrapper>
                 </InnerContainer>
             </MainContentContainer>
             )

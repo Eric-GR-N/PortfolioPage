@@ -23,6 +23,10 @@ position: relative;
 justify-content: center;
 align-items: center;
 height: 70vh;
+
+@media only screen and (max-width: 600px) {
+    height: 100vh;
+}
 `
 
 export const BottomContainer = styled(PageContainer)`
@@ -31,6 +35,10 @@ justify-content: center;
 height: 30vh;
 background-color: #1B2F33;
 position: relative;
+
+@media only screen and (max-width: 600px) {
+    display: none;
+}
 `
 
 export const MainWrapper = styled.div`
@@ -38,9 +46,13 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
-${'' /* border: solid 3px black; */}
 position: absolute;
 width: 40%;
+
+@media only screen and (max-width: 600px) {
+    width: 100%;
+    justify-content: center;
+}
 `
 
 export const MainHeader = styled.h1`
@@ -115,6 +127,11 @@ width: 70%;
 position: relative;
 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.356);
 overflow: hidden;
+
+@media only screen and (max-width: 600px) {
+    height: 100vh;
+    width: 100%;
+}
 `
 
 export const TitleParagraph = styled(Paragraph)`
@@ -123,6 +140,10 @@ width: ${props => props.width};
 color: #1B2F33;
 font-size: 1.3rem;
 text-align: center;
+@media only screen and (max-width: 600px) {
+    border: solid blue 1px;
+    width: 90%;
+}
 `
 export const MenuParagraph = styled.p`
 top: 0;
@@ -184,9 +205,12 @@ position: relative;
 align-items: center;
 justify-content: center;
 Background-color: rgba(255,255,255,0.95);
-
 width: 100%;
 height: 100%;
+
+@media only screen and (max-width: 600px) {
+    flex-direction: column;
+}
 `
 
 export const InnerContainer = styled.div`
@@ -197,6 +221,12 @@ height: 100%;
 width: 40%;
 flex-wrap: wrap;
 align-content: center;
+@media only screen and (max-width: 600px) {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    border: solid red 2px;
+}
 `
 
 export const ArrowRight = styled(MdKeyboardArrowRight)`
@@ -206,6 +236,11 @@ width: 4em;
 height: 4em;
 right: 15%;
 cursor: pointer;
+z-index: 100;
+@media only screen and (max-width: 600px) {
+    position: absolute;
+    right: 5%;
+}
 `
 export const ArrowLeft = styled(MdKeyboardArrowLeft)`
 color: #1B2F33;
@@ -214,6 +249,12 @@ height: 4em;
 position: fixed;
 left: 15%;
 cursor: pointer;
+z-index: 100;
+
+@media only screen and (max-width: 600px) {
+    position: absolute;
+    left: 5%;
+}
 `
 
 export const ContactBox = styled.div`
@@ -221,17 +262,29 @@ display: flex;
 align-items: center;
 width: 80%;
 margin: 1em;
+
+@media only screen and (max-width: 600px) {
+    margin: 0;
+    padding-bottom: 5%;
+}
 `
 
 export const PhoneIcon = styled(FiPhoneForwarded)`
 width: 1.3em;
 height: 1.3em;
 margin-right: 1em;
+@media only screen and (max-width: 600px) {
+    margin: 0;
+}
 `
 export const MailIcon = styled(GoMail)`
 width: 1.5em;
 height: 1.5em;
 margin-right: 0.8em;
+
+@media only screen and (max-width: 600px) {
+    margin: 0;
+}
 `
 
 export const Footer = styled.footer`
@@ -250,7 +303,6 @@ align-items: center;
 width: 15%;
 height: 90%;
 position: relative;
-${'' /* border: solid white 2px; */}
 `
 
 export const FooterText = styled.p`
@@ -289,6 +341,9 @@ text-align: center;
 color: black;
 font-size: 1.3em;
 letter-spacing: 2px;
+@media only screen and (max-width: 600px) {
+    display: none;
+}
 `
 
 export const NavigationWrapper = styled.div`
@@ -297,5 +352,19 @@ align-items: center;
 position: absolute;
 width: 100%;
 top: 0;
+`
+
+export const InnerTextWrapper = styled.div`
+border: yellow solid 2px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 80%;
+width: 95%;
+
+@media only screen and (max-width: 600px) {
+    justify-content: start;
+}
 `
 
