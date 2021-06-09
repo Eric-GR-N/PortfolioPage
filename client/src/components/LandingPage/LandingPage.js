@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { Burger, Divider, Item, LandingContainer, Menu, NavBar, NavLink, Span,
+import React, { useState, useEffect, useTransition } from 'react'
+import { Burger, Divider, Item, LandingContainer, Menu, NavBar, NavLink,
 TitleParagraph, UpperContainer, BottomContainer, MainContainer, ImageContainer,
-MainContentContainer, InnerContainer, ArrowLeft, ArrowRight, ProjectWrapper,
-BurgerCross, MenuParagraph, ContactBox, PhoneIcon, MailIcon, Footer, FooterBox,
-FooterText, FooterTitle, Home, MainHeader, MainText, MainWrapper } from './LandingPageElements';
+MainContentContainer, InnerContainer, ArrowLeft, ArrowRight,
+BurgerCross, ContactBox, PhoneIcon, MailIcon, Footer, FooterBox,
+FooterText, FooterTitle, Home, MainHeader, MainText, MainWrapper, MenuText, NavigationWrapper } from './LandingPageElements';
 import { Note } from '../../globalComponents';
 import Portrait from '../../resources/me.jpg';
 import Contact from '../../resources/contact.jpg';
@@ -71,19 +71,19 @@ const LandingPage = () => {
             </MainContentContainer>
             )
         }else if(menuChoice === 'About Me'){
-            return (
-                <MainContentContainer>
-                <InnerContainer>
-                    <ImageContainer img={Portrait}/>
-                </InnerContainer>
-                <Divider height='60%'/>
-                <InnerContainer>
-                    <TitleParagraph width="80%">Eric Nordgren</TitleParagraph>
-                    <TitleParagraph margin="8%" width="80%">A newly graduated student with a strong passion for Frontend Development. At the moment i'm combining vacation with deep diving into React.js</TitleParagraph>
-                    <TitleParagraph>- A perfect summer</TitleParagraph>
-                </InnerContainer>
-            </MainContentContainer>
-            )
+                return (
+                    <MainContentContainer>
+                    <InnerContainer>
+                        <ImageContainer img={Portrait}/>
+                    </InnerContainer>
+                    <Divider height='60%'/>
+                    <InnerContainer>
+                        <TitleParagraph width="80%">Eric Nordgren</TitleParagraph>
+                        <TitleParagraph margin="8%" width="80%">A newly graduated student with a strong passion for Frontend Development. At the moment i'm combining vacation with deep diving into React.js</TitleParagraph>
+                        <TitleParagraph>- A perfect summer</TitleParagraph>
+                    </InnerContainer>
+                </MainContentContainer>
+                )
         }else if(menuChoice === 'Contact'){
             return (
                 <MainContentContainer>
@@ -108,8 +108,11 @@ const LandingPage = () => {
     return (
         <LandingContainer>
         <UpperContainer>
-        <Home onClick={e => setType(e)}/>
+        <NavigationWrapper>
         {menuOpen ? <BurgerCross onClick={isOpen}/> : <Burger onClick={isOpen}/>}
+        <MenuText>Menu</MenuText>
+        <Home onClick={e => setType(e)}/>
+        </NavigationWrapper>
         <NavBar menuOpen={menuOpen}>
                 <Menu>
                     <Item>

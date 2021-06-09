@@ -94,7 +94,6 @@ cursor: pointer;
     transition: 0.4s ease-in-out;
     padding: 0 1em;
 }
-
 `
 
 export const Span = styled.span`
@@ -139,24 +138,26 @@ export const Burger = styled(GrMenu)`
 width: 1.6em;
 height: 1.6em;
 color: #1B2F33;
-position: absolute;
-top: 0;
-left: 0;
-margin: 1em 0 0 1.2em;
 z-index: 11;
 cursor: pointer;
+margin: 1em;
+&:active{
+    transition: 0.4s;
+    transform: scale(0.5);
+}
 `
 
 export const BurgerCross = styled(GrClose)`
 width: 1.6em;
 height: 1.6em;
 color: #1B2F33;
-position: absolute;
-top: 0;
-left: 0;
-margin: 1em 0 0 1.2em;
 z-index: 11;
 cursor: pointer;
+margin: 1em;
+&:active{
+    transition: 0.4s;
+    transform: scale(0.5);
+}
 `
 
 export const Divider = styled.div`
@@ -253,7 +254,7 @@ ${'' /* border: solid white 2px; */}
 `
 
 export const FooterText = styled.p`
-color: white;
+color: rgba(255,255,255, 0.8);
 line-height: 1.5em;
 font-size: 1.1rem;
 text-align: center;
@@ -261,24 +262,40 @@ text-align: center;
 
 export const FooterTitle = styled.p`
 padding: 0 8% 1% 8%;
-color: white;
+color: rgba(255,255,255, 0.8);
 letter-spacing: 2px;
 font-size: 1.2rem;
 text-align: center;
 margin: 10% 0 10% 0;
-border-bottom: solid white 1px;
+border-bottom: solid rgba(255,255,255, 0.8) 1px;
 `
 
 export const Home = styled(AiFillHome)`
 width: 1.6em;
 height: 1.6em;
 color: #1B2F33;
-position: absolute;
-top: 0;
-right: 0;
-margin: 1em 1.2em 0 0;
 z-index: 11;
 cursor: pointer;
+margin-left: 90%;
+
+&:active{
+    transition: 0.4s;
+    transform: scale(0.5);
+}
 `
 
+export const MenuText = styled.p`
+text-align: center;
+color: black;
+font-size: 1.3em;
+letter-spacing: 2px;
+`
+
+export const NavigationWrapper = styled.div`
+display: flex;
+align-items: center;
+position: absolute;
+width: 100%;
+top: 0;
+`
 
