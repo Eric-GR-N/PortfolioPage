@@ -9,7 +9,7 @@ import Portrait from '../../resources/me.jpg';
 import Contact from '../../resources/contact.jpg';
 import HomePage from '../../resources/HomePage.png';
 import PilsnerProtokollet from '../../resources/pilsner.png';
-import PilsnerMob from '../../resources/pilsnermob.png';
+import PilsnerMob from '../../resources/pilsner3.PNG';
 
 const projects = [{
     img: HomePage,
