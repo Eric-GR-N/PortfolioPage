@@ -16,7 +16,7 @@ const projects = [{
     mobileImg: HomePage,
     width: '23em',
     height: '16em',
-    titleText: 'Home Page',
+    titleText: 'A Smarter Home',
     text: 'A web app for home automation and integration of the Internet Of Things for a simpler everyday life. The App is developed with React.js on the frontend and Node.js on the backend',
 },
 {
@@ -25,7 +25,7 @@ const projects = [{
     width: '15em',
     height: '24em',
     titleText: 'PilsnerProtokollet',
-    text: 'This one is mostly just for laughs. My friends who has a passion for beer testing needed a fullstack mobile friendly page that is able to communicate with a MySQL database for rating and fetching aggregated data',
+    text: 'This one is mostly just for laughs. My friends have a passion for beer testing and needed a fullstack mobile friendly page that is able to communicate with a MySQL database for rating and fetching aggregated data',
 }
 ];
 
@@ -95,8 +95,7 @@ const LandingPage = () => {
                     <InnerContainer>
                         <InnerTextWrapper>
                             <TitleParagraph width="80%">Eric Nordgren</TitleParagraph>
-                            <TitleParagraph margin="8%" width="80%">A newly graduated student with a strong passion for Frontend Development. At the moment i'm combining vacation with deep diving into React.js</TitleParagraph>
-                            <TitleParagraph>- A perfect summer</TitleParagraph>
+                            <TitleParagraph margin="8%" width="80%">A newly graduated student with a strong passion for frontend development.</TitleParagraph>
                         </InnerTextWrapper>
                     </InnerContainer>
                 </MainContentContainer>

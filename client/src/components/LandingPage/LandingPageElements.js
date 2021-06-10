@@ -98,6 +98,7 @@ z-index: 100;
 
 export const MobileNavBar = styled.nav`
 display: none;
+
 @media only screen and (max-width: 600px) {
     z-index: 100;
     display: flex;
@@ -118,10 +119,6 @@ flex-direction: column;
 justify-content: space-around;
 align-items: center;
 height: 50%;
-
-@media only screen and (max-width: 600px) {
-
-}
 `
 
 export const Item = styled.li`
